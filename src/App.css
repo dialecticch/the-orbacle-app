@@ -2,18 +2,22 @@ main {
   align-content: center;
   box-sizing: border-box;
   display: grid;
-  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-    'Arial', sans-serif;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   hyphens: auto;
   line-height: 1.65;
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 800px;
   min-height: 100vh;
   padding: 72px 0;
   text-align: center;
 }
 h1 {
   font-size: 45px;
+}
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 h2 {
   margin-top: 1.5em;
@@ -40,5 +44,10 @@ pre {
 }
 code:before,
 code:after {
-  content: '\`';
+  content: "\`";
+}
+
+.data-filed {
+  margin-left: 5px;
+  font-size: 14px;
 }
