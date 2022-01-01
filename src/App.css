@@ -3,7 +3,7 @@ main {
   box-sizing: border-box;
   display: grid;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
+    "Arial", "Academy Engraved LET", sans-serif;
   hyphens: auto;
   line-height: 1.65;
   margin: 0 auto;
@@ -13,7 +13,31 @@ main {
   text-align: center;
 }
 h1 {
-  font-size: 45px;
+  font-size: 72px;
+  font-family: "Academy Engraved LET";
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 25px;
+  font-family: "Academy Engraved LET";
+  font-weight: 300;
+  padding: 10px;
+  padding-top: 10px;
+  height: 40px;
+  width: 200px;
+  border-radius: 0px;
+  border-color: black;
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 2px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 0px 15px 10px 15px;
+}
+button:hover {
+  background-color: white;
 }
 h3 {
   margin-top: 0px;
@@ -24,6 +48,10 @@ h2 {
 }
 p {
   font-size: 16px;
+  font-family: "Academy Engraved LET";
+  font-weight: 500;
+  margin: 0px 0px 0px 0px;
+  vertical-align: middle;
 }
 a {
   border-bottom: 1px solid white;
@@ -50,4 +78,16 @@ code:after {
 .data-filed {
   margin-left: 5px;
   font-size: 14px;
+}
+
+.token-input {
+  font-size: 16px;
+  font-family: "Academy Engraved LET";
+  font-weight: 400;
+  width: 200px;
+  border-radius: 0px;
+  border-width: 2px;
+  border-color: black;
+  padding-top: 5px;
+  padding-left: 20px;
 }
