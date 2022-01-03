@@ -42,8 +42,8 @@ export default class Profile extends React.Component {
             <div style={{ textAlign:"left"}}>
               <div style={{textAlign:"left"}}> 
               <h3>Token Profile: </h3>
-                <p className="data-filed">  Max Price:  <b>{this.state.profile.price_profile["max_price"]}</b></p>
-                <p className="data-filed">  Listing Price:  <b>{this.state.profile["listing_price"]}</b></p>
+                <p className="data-filed">  Max Price:  <b>{this.state.profile.price_profile["max_price"]?.toFixed(2)}</b></p>
+                <p className="data-filed">  Listing Price:  <b>{this.state.profile["listing_price"]?.toFixed(2)}</b></p>
                 <p className="data-filed">  Owner:  <b><a target="_blank" href={"https://opensea.io/" + this.state.profile["owner"]}>{this.state.profile["owner"]}</a></b></p>
                 <p className="data-filed">  Owner Nr Tokens:  <b>{this.state.profile["owner_tokens_in_collection"]}</b></p>
                 <br></br>
@@ -57,12 +57,12 @@ export default class Profile extends React.Component {
               <p className="data-filed">  Rarest Trait Floor: <b>{this.state.profile["price_profile"]["most_rare_trait_floor"]}</b></p>
               <p className="data-filed">  Most Valuable Trait Floor: <b>{this.state.profile["price_profile"]["most_valued_trait_floor"]}</b></p>
               <p className="data-filed">  Rarity Weighted Traits Floor: <b>{this.state.profile["price_profile"]["rarity_weighted_floor"]?.toFixed(2)}</b></p>
-              <p className="data-filed">  Average Last 3 Most Valuable Trait Sales : <b>{this.state.profile["price_profile"]["avg_last_three_mvt_sales"]?.toFixed(2)}</b></p>
+              <p className="data-filed">  Average Last 3 Most Valuable Trait Sales: <b>{this.state.profile["price_profile"]["avg_last_three_mvt_sales"]?.toFixed(2)}</b></p>
               <p className="data-filed">  Last Sale * Most Valuable Trait Avg Price Change: <b>{this.state.profile["price_profile"]["last_sale_relative_mvt_avg"]?.toFixed(2)}</b></p>
               <h3 style={{marginTop:'25px'}}>Liquidity Profile:</h3>
-              <p className="data-filed">  Avg days between Rarest Trait sales: <b>{this.state.profile["liquidity_profile"]["rarest_trait_sale_frequency_30d"]?.toFixed(2)}</b></p>
-              <p className="data-filed">  Avg days between Most Valuable Trait sales: <b>{this.state.profile["liquidity_profile"]["mvt_sale_frequency_30d"]?.toFixed(2)}</b></p>
-              <p className="data-filed">  Highest days between any Trait sales: <b>{this.state.profile["liquidity_profile"]["lowest_sale_frequency_30d"]?.toFixed(2)}</b></p>
+              <p className="data-filed">  Avg days between Rarest Trait sales 60d: <b>{this.state.profile["liquidity_profile"]["rarest_trait_sale_frequency_30d"]?.toFixed(2)}</b></p>
+              <p className="data-filed">  Avg days between Most Valuable Trait sales 60d: <b>{this.state.profile["liquidity_profile"]["mvt_sale_frequency_30d"]?.toFixed(2)}</b></p>
+              <p className="data-filed">  Highest days between any Trait sales 60d: <b>{this.state.profile["liquidity_profile"]["lowest_sale_frequency_30d"]?.toFixed(2)}</b></p>
               <p className="data-filed">  Rarest Trait Nr Listed: <b>{this.state.profile["liquidity_profile"]["rarest_trait_nr_listed"][0]} / {this.state.profile["liquidity_profile"]["rarest_trait_nr_listed"][1]}</b></p>
               <p className="data-filed">  Most Valuable Trait Nr Listed: <b>{this.state.profile["liquidity_profile"]["mvt_nr_listed"][0]} / {this.state.profile["liquidity_profile"]["mvt_nr_listed"][1]}</b></p>
               
@@ -75,7 +75,7 @@ export default class Profile extends React.Component {
                     this.state.profile["rarity_profile"]["traits_3_combination_overlap_ids"]?.map(
                       (value, idx) =>
                         <a href={ this.state.profile["opensea"].substring(0, 69) + value} target="_blank">
-                          {idx!== 0 && idx % 5 == 0 ? <br/>:""} {value}
+                          {idx!== 0 && idx % 10 == 0 ? <br/>:""} {value}
                         </a>)
                   }
                 </p></b>
@@ -86,7 +86,7 @@ export default class Profile extends React.Component {
                     this.state.profile["rarity_profile"]["traits_4_combination_overlap_ids"]?.map(
                       (value, idx) =>
                         <a href={ this.state.profile["opensea"].substring(0, 69) + value} target="_blank">
-                          {idx!== 0 && idx % 5 == 0 ? <br/>:""} {value}
+                          {idx!== 0 && idx % 10 == 0 ? <br/>:""} {value}
                         </a>) 
                   }
                 </p></b>
@@ -97,7 +97,7 @@ export default class Profile extends React.Component {
                     this.state.profile["rarity_profile"]["traits_5_combination_overlap_ids"]?.map(
                       (value, idx) =>
                         <a href={ this.state.profile["opensea"].substring(0, 69) + value} target="_blank">
-                          {idx!== 0 && idx % 5 == 0 ? <br/>:""} {value}
+                          {idx!== 0 && idx % 10 == 0 ? <br/>:""} {value}
                         </a>) 
                   }
                 </p></b>

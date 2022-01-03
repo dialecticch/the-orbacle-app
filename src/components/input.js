@@ -4,13 +4,30 @@ import Profile from './profile'
 export default class Input extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {collection: 'forgottenruneswizardscult', token_id: 0, profile: null, loading:false, page:'token'};
+      this.state = {collection: 'forgottenruneswizardscult', token_id: 0, profile: null, loading:false, page:'token', collections:['forgottenruneswizardscult']};
   
       this.handleChangeCollection = this.handleChangeCollection.bind(this);
       this.handleChangeTokenId = this.handleChangeTokenId.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.setToken = this.setToken.bind(this);
       this.setWallet = this.setWallet.bind(this);
+
+      let url = "http://127.0.0.1:8080/collection/"
+      console.log(url)
+
+      var requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+      };
+      fetch(url, requestOptions)
+      .then(response => response.text())
+      .then(result => {
+          this.setState({collections: JSON.parse(result)});
+          console.log(this.state.profile)
+      })
+      .catch(error => {
+        console.log('error', error)
+      });
     }
   
     handleChangeCollection(event) {
@@ -44,7 +61,10 @@ export default class Input extends React.Component {
             this.setState({loading: false});
             console.log(this.state.profile)
         })
-        .catch(error => console.log('error', error));
+        .catch(error => {
+          this.setState({loading: false});
+          console.log('error', error)
+        });
        
     }
   
@@ -61,7 +81,11 @@ export default class Input extends React.Component {
               <div  style={{display: 'flex', justifyContent:'center', verticalAlign:'middle', marginTop:'10px'}}>
                 <div style={{textAlign:'left', width:'250px'}}>
                   <p>Collection</p>
-                  <input className="token-input" value={this.state.collection} onChange={this.handleChangeCollection}></input>
+                  <select className="token-input" style={{height:"55%", width:"90%"}} value={this.state.collection} onChange={this.handleChangeCollection} >
+                    {this.state.collections.map((item) => {
+                        return (<option key={item} value={item}>{item}</option>);
+                    })}
+                  </select>
                 </div>
                 <div style={{textAlign:'left', width:'250px'}}>
                   <p>Token Id</p>
@@ -72,7 +96,7 @@ export default class Input extends React.Component {
                 </div>
               </div> 
               <br/>
-              {this.state.loading ? <p style={{marginTop:'20px', fontSize:'20px'}}>'Loading profile...'</p> : this.state.profile ? <Profile profile={this.state.profile} /> : ""}
+              {this.state.loading ? <p style={{marginTop:'20px', fontSize:'20px'}}>Loading profile...</p> : this.state.profile ? <Profile profile={this.state.profile} /> : ""}
             </div>
             :"wallet" }
           </>

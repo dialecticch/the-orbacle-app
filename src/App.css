@@ -36,7 +36,7 @@ button {
   border-width: 0px;
   border-bottom-width: 2px;
   margin-bottom: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(185, 183, 183);
   margin: 0px 15px 10px 15px;
 }
 button:hover {
@@ -57,7 +57,7 @@ p {
   font-weight: 500;
   margin: 0px 0px 0px 0px;
   vertical-align: middle;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 a {
   border-bottom: 0px solid white;
@@ -97,7 +97,7 @@ code:after {
   border-width: 2px;
   border-color: black;
   padding-left: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(185, 183, 183);
 }
 .profile-collection {
   position: absolute;
