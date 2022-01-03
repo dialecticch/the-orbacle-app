@@ -51,10 +51,10 @@ export default class Input extends React.Component {
     render() {
       return (
           <>
-          <div style={{display: 'flex', justifyContent:'center'}}>
+          {/* <div style={{display: 'flex', justifyContent:'center', marginBottom:'30px'}}>
             <button onClick={this.setToken}>Token</button>
             <button onClick={this.setWallet}>Wallet</button>
-          </div>
+          </div> */}
           {
             this.state.page == "token" ? 
             <div>
@@ -67,11 +67,12 @@ export default class Input extends React.Component {
                   <p>Token Id</p>
                   <input className="token-input" value={this.state.token_id} onChange={this.handleChangeTokenId}></input>
                 </div>
-                <div style={{textAlign:'left', height:'100%', marginTop:'15px', marginLeft:'-10px' }}>
+                <div style={{textAlign:'left', marginTop:'31px', marginLeft:'-10px' }}>
                   <button type="submit" onClick={this.handleSubmit} >Submit</button>
                 </div>
-              </div>
-              {this.state.loading ? 'Loading profile...' : this.state.profile ? <Profile profile={this.state.profile} /> : ""}
+              </div> 
+              <br/>
+              {this.state.loading ? <p style={{marginTop:'20px', fontSize:'20px'}}>'Loading profile...'</p> : this.state.profile ? <Profile profile={this.state.profile} /> : ""}
             </div>
             :"wallet" }
           </>

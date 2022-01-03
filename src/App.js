@@ -9,7 +9,8 @@ function App() {
 
   return (
     <main>
-      <h1>NFT-PRICER</h1>
+      <h1 style={{fontStyle:'oblique'}}>The Orbacle</h1>
+      <img style={{height:'200px', width:"200px", marginTop:"0px"}} src={"Orbacle.png"}/>
 
       <Input />
 
