@@ -12,7 +12,7 @@ export default class Input extends React.Component {
       this.setToken = this.setToken.bind(this);
       this.setWallet = this.setWallet.bind(this);
 
-      let url = "http://127.0.0.1:8080/collection/"
+      let url = "http://167.172.101.135:8080/collection/"
       console.log(url)
 
       var requestOptions = {
@@ -46,7 +46,7 @@ export default class Input extends React.Component {
     }
   
     handleSubmit(event) {
-        let url = "http://127.0.0.1:8080/profile/" + this.state.collection +"/" + this.state.token_id
+        let url = "http://167.172.101.135:8080/profile/" + this.state.collection +"/" + this.state.token_id
         console.log(url)
 
         var requestOptions = {
