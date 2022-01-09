@@ -31,7 +31,7 @@ export default class Profile extends React.Component {
                 <p className="data-filed">  Nr Listed: <b>{this.state.profile.collection_profile["nr_listed_now"]}</b></p>           
                 <p className="data-filed">  New Listings 14d: <b>{this.state.profile.collection_profile["nr_new_listings_14d"]}</b></p>
                 <p className="data-filed">  Cancelled Listings 14d: <b>{this.state.profile.collection_profile["nr_cancelled_listings_14d"]}</b></p>
-                <p className="data-filed">  Filled Listings 14d: <b>{this.state.profile.collection_profile["nr_sales_14d"]}</b></p>           
+                <p className="data-filed">  Sales 14d: <b>{this.state.profile.collection_profile["nr_sales_14d"]}</b></p>           
               </div>
             </div>
           </div>
@@ -64,9 +64,10 @@ export default class Profile extends React.Component {
               <p className="data-filed">  Last Sale * Avg Price Change Most Valuable Trait: <b>{this.state.profile["price_profile"]["last_sale_relative_mvt_avg"]?.toFixed(2)} </b></p>
               <p className="data-filed">  Last Sale * Avg Price Change Collection: <b>{this.state.profile["price_profile"]["last_sale_relative_collection_avg"]?.toFixed(2)} </b></p>
               <h3 style={{marginTop:'25px'}}>Liquidity Profile:</h3>
-              <p className="data-filed">  Nr Sales Rarest Trait last 60d: <b>{this.state.profile["liquidity_profile"]["rarest_trait_sale_count"]?.toFixed(0)}</b></p>
-              <p className="data-filed">  Nr Sales Most Valuable Trait last 60d: <b>{this.state.profile["liquidity_profile"]["mvt_sale_count"]?.toFixed(0)}</b></p>
-              <p className="data-filed">  Lowest sales on any Trait last 60d: <b>{this.state.profile["liquidity_profile"]["lowest_trait_sales"]?.toFixed(0)}</b></p>
+              <p className="data-filed">  Nr Sales Above Max Price 60d: <b>{this.state.profile["liquidity_profile"]["nr_sales_above_max_price_60d"]}</b></p>
+              <p className="data-filed">  Nr Sales Rarest Trait last 60d: <b>{this.state.profile["liquidity_profile"]["rarest_trait_sale_count_60d"]?.toFixed(0)}</b></p>
+              <p className="data-filed">  Nr Sales Most Valuable Trait last 60d: <b>{this.state.profile["liquidity_profile"]["mvt_sale_count_60d"]?.toFixed(0)}</b></p>
+              <p className="data-filed">  Lowest sales on any Trait last 60d: <b>{this.state.profile["liquidity_profile"]["lowest_trait_sales_60d"]?.toFixed(0)}</b></p>
               <p className="data-filed">  Rarest Trait Nr Listed: <b>{this.state.profile["liquidity_profile"]["rarest_trait_nr_listed"][0]} / {this.state.profile["liquidity_profile"]["rarest_trait_nr_listed"][1]}</b></p>
               <p className="data-filed">  Most Valuable Trait Nr Listed: <b>{this.state.profile["liquidity_profile"]["mvt_nr_listed"][0]} / {this.state.profile["liquidity_profile"]["mvt_nr_listed"][1]}</b></p>
               
