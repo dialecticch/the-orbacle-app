@@ -10,6 +10,7 @@ main {
   padding: 72px 0;
   text-align: center;
   background-color: rgb(55, 55, 98);
+  font-family: "URW Chancery L";
 }
 h1 {
   font-size: 72px;
@@ -59,16 +60,7 @@ p {
   vertical-align: middle;
   color: white;
 }
-a {
-  border-bottom: 0px solid white;
-  color: #0076ff;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-a:hover {
-  border-bottom: 1px solid #0076ff;
-}
+
 code,
 pre {
   color: #d400ff;
@@ -81,6 +73,17 @@ code:after {
   content: "\`";
 }
 
+.profile-link {
+  border-bottom: 0px solid white;
+  font-family: "URW Chancery L";
+  color: #0076ff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.profile-link:hover {
+  border-bottom: 1px solid #0076ff;
+}
 .data-filed {
   margin-left: 5px;
   font-size: 18px;
@@ -109,4 +112,16 @@ code:after {
   left: 50%;
   transform: translate(-50%, 0%);
   margin-top: 180px;
+}
+
+.menuItem {
+  font-family: "URW Chancery L";
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.menuItem:hover {
+  text-decoration: underline;
 }
