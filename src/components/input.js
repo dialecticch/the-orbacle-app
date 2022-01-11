@@ -1,10 +1,12 @@
 import React from 'react';
 import Profile from './profile'
 
+const URL = "https://api.prod.theorbacle.com"
+
 export default class Input extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {collection: 'forgottenruneswizardscult', token_id: 0, profile: null, loading:false, page:'token', collections:['forgottenruneswizardscult']};
+      this.state = {collection: '',error:'', token_id: 0, profile: null, loading:false, page:'token', collections:['forgottenruneswizardscult']};
   
       this.handleChangeCollection = this.handleChangeCollection.bind(this);
       this.handleChangeTokenId = this.handleChangeTokenId.bind(this);
@@ -12,7 +14,7 @@ export default class Input extends React.Component {
       this.setToken = this.setToken.bind(this);
       this.setWallet = this.setWallet.bind(this);
 
-      let url = "http://localhost:8080/collection/"
+      let url = URL + "/collection/"
       console.log(url)
 
       var requestOptions = {
@@ -22,8 +24,13 @@ export default class Input extends React.Component {
       fetch(url, requestOptions)
       .then(response => response.text())
       .then(result => {
-          this.setState({collections: JSON.parse(result)});
+        try {
+          this.setState({collections:JSON.parse(result)});
           console.log(this.state.profile)
+        }catch (error){
+          console.log('error', error)
+          this.setState({error:"failed to fetch"});
+        }
       })
       .catch(error => {
         console.log('error', error)
@@ -46,7 +53,7 @@ export default class Input extends React.Component {
     }
   
     handleSubmit(event) {
-        let url = "http://localhost:8080/profile/" + this.state.collection +"/" + this.state.token_id
+        let url  = URL + "/profile/" + this.state.collection +"/" + this.state.token_id
         console.log(url)
 
         var requestOptions = {
@@ -57,13 +64,30 @@ export default class Input extends React.Component {
         fetch(url, requestOptions)
         .then(response => response.text())
         .then(result => {
-            this.setState({profile: result});
-            this.setState({loading: false});
-            console.log(this.state.profile)
+          let json;
+            try {
+              json = JSON.parse(result)
+            }catch (error){
+              this.setState({error:"failed to fetch"});
+              this.setState({profile: null});
+              this.setState({loading: false});
+            }
+            if (json["error"]) {
+              console.log(json)
+              this.setState({error:"failed to fetch"});   
+              this.setState({profile: null});           
+              this.setState({loading: false});
+            }else{
+              this.setState({profile: json});
+              this.setState({loading: false});
+              this.setState({error: ''});
+              console.log(this.state.profile)
+            }
         })
         .catch(error => {
           this.setState({loading: false});
-          console.log('error', error)
+          this.setState({profile: null});
+          this.setState({error:"failed to fetch"});
         });
        
     }
@@ -92,6 +116,7 @@ export default class Input extends React.Component {
                 </div>
               </div> 
               <br/>
+              <p style={{marginTop:'20px', fontSize:'20px'}}>{this.state.error}</p>
               {this.state.loading ? <p style={{marginTop:'20px', fontSize:'20px'}}>Loading profile...</p> : this.state.profile ? <Profile profile={this.state.profile} /> : ""}
             </div>
             :"wallet" }

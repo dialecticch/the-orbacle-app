@@ -13,8 +13,9 @@ export default class Menu extends React.Component {
           <>
           <div style={{display:'flex', justifyContent:'right'}}>
             <a className="menuItem">About</a>
-            <a className="menuItem" href="https://github.com">Source Code</a>
-            <a className="menuItem" href="https://twitter.com/Mephistophy">Contact</a>
+            <a className="menuItem" href="https://api.prod.theorbacle.com/docs" target="_blank">API Docs</a>
+            <a className="menuItem" href="https://github.com" target="_blank">Source Code</a>
+            <a className="menuItem" href="https://twitter.com/Mephistophy" target="_blank">Contact</a>
           </div>
           </>
       );

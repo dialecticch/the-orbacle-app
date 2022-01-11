@@ -4,7 +4,7 @@ import React from 'react';
 export default class Profile extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {profile: JSON.parse(this.props.profile)}
+      this.state = {profile: this.props.profile}
     }
   
   
