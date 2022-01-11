@@ -1,12 +1,12 @@
 import React from 'react';
 import Profile from './profile'
 
-const URL = "https://api.prod.theorbacle.com"
+const URL = "http://localhost:8080"//"https://api.prod.theorbacle.com"
 
 export default class Input extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {collection: '',error:'', token_id: 0, profile: null, loading:false, page:'token', collections:['forgottenruneswizardscult']};
+      this.state = {collection: 'forgottenruneswizardscult',error:'', token_id: 0, profile: null, loading:false, page:'token', collections:['forgottenruneswizardscult']};
   
       this.handleChangeCollection = this.handleChangeCollection.bind(this);
       this.handleChangeTokenId = this.handleChangeTokenId.bind(this);
@@ -25,8 +25,8 @@ export default class Input extends React.Component {
       .then(response => response.text())
       .then(result => {
         try {
+          console.log(result)
           this.setState({collections:JSON.parse(result)});
-          console.log(this.state.profile)
         }catch (error){
           console.log('error', error)
           this.setState({error:"failed to fetch"});
@@ -101,13 +101,13 @@ export default class Input extends React.Component {
               <div  style={{display: 'flex', justifyContent:'center', verticalAlign:'middle', marginTop:'10px'}}>
                 <div style={{textAlign:'left', width:'250px'}}>
                   <p>Collection</p>
-                  <select className="token-input" style={{height:"55%", width:"90%"}} value={this.state.collection} onChange={this.handleChangeCollection} >
+                  <select className="token-input" defaultValue="forgottenruneswizardscult" style={{height:"53%", width:"min-content", paddingRight:"8px"}} value={this.state.collection} onChange={this.handleChangeCollection} >
                     {this.state.collections.map((item) => {
-                        return (<option key={item} value={item}>{item}</option>);
+                        return (<option key={item.name} value={item.slug}>{item.name}</option>);
                     })}
                   </select>
                 </div>
-                <div style={{textAlign:'left', width:'250px'}}>
+                <div style={{textAlign:'left', width:'250px', marginLeft:'23px'}}>
                   <p>Token Id</p>
                   <input className="token-input" value={this.state.token_id} onChange={this.handleChangeTokenId}></input>
                 </div>
