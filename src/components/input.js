@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from './profile'
 
-const URL = "http://localhost:8080"//"https://api.prod.theorbacle.com"
+const URL = "https://api.prod.theorbacle.com"
 
 export default class Input extends React.Component {
     constructor(props) {
