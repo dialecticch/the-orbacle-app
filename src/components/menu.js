@@ -17,6 +17,7 @@ export default class Menu extends React.Component {
             <a className="menuItem" href="https://github.com" target="_blank">Source Code</a>
             <a className="menuItem" href="https://twitter.com/Mephistophy" target="_blank">Contact</a>
           </div>
+          
           </>
       );
     }

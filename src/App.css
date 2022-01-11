@@ -6,7 +6,8 @@ main {
   line-height: 1.65;
   margin: 0 auto;
   min-height: 100vh;
-  height: 200vh;
+  height: 1000vh;
+  overflow: auto;
   padding: 72px 0;
   text-align: center;
   background-color: rgb(55, 55, 98);
@@ -124,4 +125,36 @@ code:after {
 }
 .menuItem:hover {
   text-decoration: underline;
+}
+
+.toggle-container {
+  width: 150px;
+  cursor: pointer;
+  user-select: none;
+  height: 32px;
+  position: relative;
+}
+
+.dialog-button {
+  font-family: "URW Chancery L";
+  line-height: 16px;
+  cursor: pointer;
+  color: white;
+  padding: 8px 0px 0px 7px;
+  border-radius: 18px;
+  min-width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 78px;
+  min-width: unset;
+  border-radius: 3px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 74px;
+  transition: all 0.3s ease;
+}
+
+.disabled {
+  left: 2px;
 }
