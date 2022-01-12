@@ -20,7 +20,7 @@ export default class Profile extends React.Component {
                 <p className="data-filed">  24h Volume: <b>{this.state.profile.collection_profile["daily_volume"]?.toFixed(2)} </b></p>
                 <p className="data-filed">  24h Sales: <b>{this.state.profile.collection_profile["daily_sales"]}</b></p>
                 <p className="data-filed">  Nr Of Owners: <b>{this.state.profile.collection_profile["nr_owners"]}</b></p>  
-                <p className="data-filed">  Avg. trait Rarity: <b>{(this.state.profile.collection_profile["avg_trait_rarity"]/100).toFixed(2)} %</b></p>          
+                <p className="data-filed">  Avg. trait Rarity: <b>{(this.state.profile.collection_profile["avg_trait_rarity"]).toFixed(2)} %</b></p>          
               </div>
               <div style={{marginLeft:"100px"}}>
                 <p className="data-filed">  Collection Floor: <b>{this.state.profile.price_profile["collection_floor"]?.toFixed(2)} </b></p>
