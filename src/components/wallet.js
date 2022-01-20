@@ -16,6 +16,7 @@ export default class WalletProfile extends React.Component {
                   <p className="data-filed"> Total Value Max <b>{this.state.profile["total_value_max"]?.toFixed(2)}</b></p>
                   <p className="data-filed">  Total Value Avg: <b>{this.state.profile["total_value_avg"]?.toFixed(2)}</b></p>
                   <p className="data-filed">  Total Value Min <b>{this.state.profile["total_value_min"]?.toFixed(2)}</b></p>
+                  <p className="data-filed">  Total Token <b>{this.state.profile["total_tokens"]?.toFixed(0)}</b></p>
                   
                   <br/>
                   {
