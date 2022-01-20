@@ -3,7 +3,7 @@ import Profile from './profile'
 import { ToggleButton } from './toggle_button';
 import  WalletProfile  from './wallet';
 
-const URL = "http://localhost:8080"
+const URL = "https://api.prod.theorbacle.com"
 
 export default class Input extends React.Component {
     constructor(props) {
