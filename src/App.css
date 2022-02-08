@@ -139,6 +139,7 @@ code:after {
 @media screen and (max-width: 950px) {
   .container-big {
     flex-direction: column;
+    margin-left: 15px;
   }
   .container-text {
     margin-left: 0px !important;
