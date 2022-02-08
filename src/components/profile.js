@@ -14,7 +14,7 @@ export default class Profile extends React.Component {
           <div className="profile-collection">
           <h2> {this.state.profile["collection_name"]}</h2>
           <div style={{ textAlign:"left", marginLeft:"50px"}}>
-            <h3>Collection Profile:</h3>
+            <h3 className="container-text">Collection Profile:</h3>
             <div className="container-big" style={{display:"inline-flex"}}>
               <div className="container-text">
                 <p className="data-filed">  24h Volume: <b>{this.state.profile.collection_profile["daily_volume"]?.toFixed(2)} </b></p>

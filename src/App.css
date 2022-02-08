@@ -142,7 +142,7 @@ code:after {
     margin-left: 15px;
   }
   .container-text {
-    margin-left: 0px !important;
+    margin-left: 15px !important;
     margin-top: 15px;
   }
 }
