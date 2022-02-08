@@ -31,7 +31,7 @@ button {
   padding: 10px;
   padding-top: 6px;
   height: 45px;
-  width: 200px;
+  width: 100px;
   border-radius: 0px;
   border-color: black;
   border-style: solid;
@@ -39,7 +39,6 @@ button {
   border-bottom-width: 2px;
   margin-bottom: 10px;
   background-color: rgb(185, 183, 183);
-  margin: 0px 15px 10px 15px;
 }
 button:hover {
   background-color: rgb(195, 133, 96);
@@ -91,11 +90,24 @@ code:after {
   min-width: max-content;
 }
 
+.collection-select {
+  font-size: 16px;
+  font-family: "URW Chancery L";
+  font-weight: 400;
+  width: 326px;
+  height: 46px;
+  border-radius: 0px;
+  border-width: 2px;
+  border-color: black;
+  padding-left: 20px;
+  background-color: rgb(185, 183, 183);
+}
+
 .token-input {
   font-size: 16px;
   font-family: "URW Chancery L";
   font-weight: 400;
-  width: 200px;
+  width: 300px;
   height: 40px;
   border-radius: 0px;
   border-width: 2px;
@@ -113,6 +125,25 @@ code:after {
   left: 50%;
   transform: translate(-50%, 0%);
   margin-top: 180px;
+}
+
+@media screen and (max-width: 810px) {
+  .container {
+    flex-direction: column;
+  }
+  .submit-button {
+    margin-top: -5px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .container-big {
+    flex-direction: column;
+  }
+  .container-text {
+    margin-left: 0px !important;
+    margin-top: 15px;
+  }
 }
 
 .menuItem {

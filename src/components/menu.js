@@ -15,7 +15,7 @@ export default class Menu extends React.Component {
             <a className="menuItem" href="https://dialectic.notion.site/The-Orbacle-73ea6a072290422d8d9b731ec74fe84b" target="_blank">About</a>
             <a className="menuItem" href="https://api.prod.theorbacle.com/docs" target="_blank">API Docs</a>
             <a className="menuItem" href="https://github.com" target="_blank">Source Code</a>
-            <a className="menuItem" href="https://twitter.com/Mephistophy" target="_blank">Contact</a>
+            <a className="menuItem" href="https://twitter.com/Meph1587" target="_blank">Contact</a>
           </div>
           
           </>

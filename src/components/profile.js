@@ -13,21 +13,22 @@ export default class Profile extends React.Component {
           <>
           <div className="profile-collection">
           <h2> {this.state.profile["collection_name"]}</h2>
-          <div style={{ textAlign:"left"}}>
+          <div style={{ textAlign:"left", marginLeft:"50px"}}>
             <h3>Collection Profile:</h3>
-            <div style={{display:"flex"}}>
-              <div>
+            <div className="container-big" style={{display:"inline-flex"}}>
+              <div className="container-text">
                 <p className="data-filed">  24h Volume: <b>{this.state.profile.collection_profile["daily_volume"]?.toFixed(2)} </b></p>
                 <p className="data-filed">  24h Sales: <b>{this.state.profile.collection_profile["daily_sales"]}</b></p>
                 <p className="data-filed">  Nr Of Owners: <b>{this.state.profile.collection_profile["nr_owners"]}</b></p>  
                 <p className="data-filed">  Avg. trait Rarity: <b>{(this.state.profile.collection_profile["avg_trait_rarity"]).toFixed(2)} %</b></p>          
               </div>
-              <div style={{marginLeft:"100px"}}>
+              <div className="container-text" style={{marginLeft:"100px"}}>
                 <p className="data-filed">  Collection Floor: <b>{this.state.profile.price_profile["collection_floor"]?.toFixed(2)} </b></p>
                 <p className="data-filed">  24h Avg Price: <b>{this.state.profile.collection_profile["daily_avg_price"]?.toFixed(2)} </b></p>
                 <p className="data-filed">  7d Avg Price: <b>{this.state.profile.collection_profile["weekly_avg_price"]?.toFixed(2)} </b></p>
                 <p className="data-filed">  30d Avg Price: <b>{this.state.profile.collection_profile["monthly_avg_price"]?.toFixed(2)} </b></p>           
-              </div> <div style={{marginLeft:"100px"}}> 
+              </div> 
+              <div className="container-text"style={{marginLeft:"100px"}}> 
                 <p className="data-filed">  Nr Listed: <b>{this.state.profile.collection_profile["nr_listed_now"]}</b></p>           
                 <p className="data-filed">  New Listings 14d: <b>{this.state.profile.collection_profile["nr_new_listings_14d"]}</b></p>
                 <p className="data-filed">  Cancelled Listings 14d: <b>{this.state.profile.collection_profile["nr_cancelled_listings_14d"]}</b></p>
@@ -38,9 +39,9 @@ export default class Profile extends React.Component {
           <div >
           <h2> {this.state.profile["name"]}</h2>
           </div>
-          <div  style={{display: 'flex',textAlign:"center"}}>
+          <div className="container-big" style={{display: 'inline-flex',textAlign:"center", marginLeft:"50px"}}>
             <div style={{ textAlign:"left"}}>
-              <div style={{textAlign:"left"}}> 
+              <div className="container-text" style={{textAlign:"left"}}> 
               <h3>Token Profile: </h3>
                 <p className="data-filed">  Avg. Price:  <b>{this.state.profile.price_profile["avg_price"]?.toFixed(2)} </b></p>
                 <p className="data-filed">  Max Price:  <b>{this.state.profile.price_profile["max_price"]?.toFixed(2)} </b></p>
@@ -53,7 +54,7 @@ export default class Profile extends React.Component {
                </div>
               <a className="profile-link" href={this.state.profile["opensea"]} target="_blank"><img height="500px" width="500px" src={this.state.profile["image_url"]}></img></a>
             </div>
-            <div style={{marginLeft: "50px", textAlign:"left"}}>
+            <div className="container-text" style={{marginLeft: "50px", textAlign:"left"}}>
               
               <h3>Price Profile: </h3>
               <p className="data-filed">  Last Sale: <b>{this.state.profile["price_profile"]["last_sale"]?.toFixed(2)}</b></p>

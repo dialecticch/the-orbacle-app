@@ -22,11 +22,11 @@ export default class WalletProfile extends React.Component {
                   {
                     Object.entries(this.state.profile["tokens"]).map(([key, value]) =>
                       <div>
-                        <div  style={{display: 'flex',textAlign:"center"}}>
+                        <div className="container-big" style={{display: 'inline-flex',textAlign:"center", marginTop:"50px"}}>
                           <div style={{ textAlign:"left",paddingTop:"5px"}}>  
                             <a  href={value.opensea} target="_blank"><img height="300px" width="300px" src={value.img}></img></a>
                           </div>
-                          <div style={{marginLeft: "50px", textAlign:"left"}}>
+                          <div className="container-text" style={{marginLeft: "50px", textAlign:"left"}}>
                             <p className="data-filed">  Max Price: <b>{value.price_profile["max_price"]?.toFixed(2)}</b></p>
                             <p className="data-filed" >  Avg Price: <b>{value.price_profile["avg_price"]?.toFixed(2)}</b></p>
                             <p className="data-filed"style={{marginBottom:'10px'}}>  Min Price: <b>{value.price_profile["min_price"]?.toFixed(2)}</b></p>

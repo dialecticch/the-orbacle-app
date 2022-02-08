@@ -208,21 +208,21 @@ export default class Input extends React.Component {
           {
             this.state.selected? 
             <div>
-              <div  style={{display: 'flex', justifyContent:'center', verticalAlign:'middle', marginTop:'10px'}}>
-                <div style={{textAlign:'left', width:'250px'}}>
+              <div className='container' style={{display: 'inline-flex', justifyContent:'center', verticalAlign:'middle', marginTop:'10px'}}>
+                <div style={{textAlign:'left', marginLeft:'10px'}}>
                   <p>Collection</p>
-                  <select className="token-input" defaultValue="forgottenruneswizardscult" style={{height:"53%", width:"min-content", paddingRight:"8px"}} value={this.state.collection} onChange={this.handleChangeCollection} >
+                  <select className="collection-select" defaultValue="forgottenruneswizardscult" value={this.state.collection} onChange={this.handleChangeCollection} >
                     {this.state.collections.map((item) => {
                         return (<option key={item.name} value={item.slug}>{item.name}</option>);
                     })}
                   </select>
                 </div>
-                <div style={{textAlign:'left', width:'250px', marginLeft:'23px'}}>
+                <div style={{textAlign:'left', marginLeft:'10px'}}>
                   <p>Token Id</p>
                   <input className="token-input" value={this.state.token_id} onChange={this.handleChangeTokenId}></input>
                 </div>
-                <div style={{textAlign:'left', marginTop:'31px', marginLeft:'-10px' }}>
-                  <button type="submit" onClick={this.handleSubmit} >Submit</button>
+                <div style={{textAlign:'left', marginLeft:'10px', marginTop:'31px', width:"326px !important" }}>
+                  <button className="submit-button" type="submit" onClick={this.handleSubmit} >Submit</button>
                 </div>
               </div> 
               <br/>
@@ -231,21 +231,21 @@ export default class Input extends React.Component {
             </div>
             :
             <div>
-              <div  style={{display: 'flex', justifyContent:'center', verticalAlign:'middle', marginTop:'10px'}}>
-                <div style={{textAlign:'left', width:'250px'}}>
+              <div className='container' style={{display: 'inline-flex', justifyContent:'center', verticalAlign:'middle', marginTop:'10px'}}>
+              <div style={{textAlign:'left', marginLeft:'10px'}}>
                   <p>Collection</p>
-                  <select className="token-input" defaultValue="forgottenruneswizardscult" style={{height:"53%", width:"min-content", paddingRight:"8px"}} value={this.state.collection} onChange={this.handleChangeCollection} >
+                  <select className="collection-select" defaultValue="forgottenruneswizardscult" value={this.state.collection} onChange={this.handleChangeCollection} >
                     {this.state.collections.map((item) => {
                         return (<option key={item.name} value={item.slug}>{item.name}</option>);
                     })}
                   </select>
                 </div>
-                <div style={{textAlign:'left', width:'250px', marginLeft:'23px'}}>
-                  <p>Wallet Id</p>
+                <div style={{textAlign:'left', marginLeft:'10px'}}>
+                  <p>Wallet Address</p>
                   <input className="token-input" value={this.state.wallet} onChange={this.handleChangeWalletId}></input>
                 </div>
-                <div style={{textAlign:'left', marginTop:'31px', marginLeft:'-10px' }}>
-                  <button type="submit" onClick={this.handleSubmit} >Submit</button>
+                <div style={{textAlign:'left', marginLeft:'10px', marginTop:'31px', width:"326px !important" }}>
+                  <button className="submit-button" type="submit" onClick={this.handleSubmit} >Submit</button>
                 </div>
               </div> 
               <br/>
