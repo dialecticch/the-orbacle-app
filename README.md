@@ -5,7 +5,7 @@ Deployed At: https://theorbacle.com
 
 ## Introduction
 
-This repository contains the codebase for the Orbacle Frontend. It is a very basic React up deployed through Vercel
+This repository contains the codebase for the Orbacle Frontend. It is a very basic React app deployed through Vercel
 
 ## Contributions
 
